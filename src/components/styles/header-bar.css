@@ -1,0 +1,17 @@
+.header-bar h1 {
+  font-size: 96px;
+  color: white;
+  margin: 48px 0;
+  text-shadow: 4px 4px 10px rgba(0,0,0, 0.3);
+}
+
+.header-bar button {
+  max-width: 100px;
+}
+
+@media (max-width: 600px) {
+  .header-bar h1 {
+    font-size: 56px;
+    margin: 16px 0;
+  }
+}

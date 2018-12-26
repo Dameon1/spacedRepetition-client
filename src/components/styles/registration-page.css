@@ -1,0 +1,12 @@
+.registration-page {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.registration-page a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+}

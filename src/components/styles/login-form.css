@@ -1,0 +1,16 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  max-width: 100%;
+  width: 80%;
+}
+
+.login-form label {
+  font-size: 28px;
+}
+
+.login-form button {
+  font-weight: bold;
+}

@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .app > :last-child {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 90%;
+  }
+}

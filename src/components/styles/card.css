@@ -1,0 +1,44 @@
+.card {
+  margin: 0 auto;
+  background: white;
+  padding: 20px 30px;
+  max-width: 500px;
+  width: 500px;
+  max-height: 600px;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card > :first-child {
+  flex-grow: 1;
+}
+
+.card > :last-child {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.log-out {
+  background: rgb(221,221,221);
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .card form {
+    width: 100%;
+  }
+}

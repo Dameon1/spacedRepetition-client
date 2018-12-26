@@ -1,0 +1,12 @@
+.landing-page {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing-page a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+}

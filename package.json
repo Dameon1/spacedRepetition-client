@@ -1,7 +1,7 @@
 {
   "name": "spacedrep-client",
   "version": "0.1.0",
-  "homepage": "http://dameon1.github.io/spacedRepition-client",
+  "homepage": "http://dameon1.github.io/spacedRepetition-client",
   "private": true,
   "devDependencies": {
     "gh-pages": "^2.0.1"
@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "cross-env REACT_APP_API_BASE_URL=\"https://spaced-rep.herokuapp.com/api,/spacedRepetition-client\" npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
