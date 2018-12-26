@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/spacedRepetition-client/precache-manifest.8885d5650ec4e9fce2b6b343b307f4ac.js"
+  "/spacedRepetition-client/precache-manifest.282f30347deeefbe75b9dd6feca51437.js"
 );
 
 workbox.clientsClaim();
