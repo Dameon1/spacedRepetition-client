@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/spacedRepition-client/static/js/runtime~main.048c0e9f.js"
   },
   {
-    "revision": "45a29eb7ae08eeb9a974",
-    "url": "/spacedRepition-client/static/js/main.45a29eb7.chunk.js"
+    "revision": "f10737a5134ae3475f80",
+    "url": "/spacedRepition-client/static/js/main.f10737a5.chunk.js"
   },
   {
     "revision": "87764a24f0d2380eb5ca",
     "url": "/spacedRepition-client/static/js/1.87764a24.chunk.js"
   },
   {
-    "revision": "45a29eb7ae08eeb9a974",
+    "revision": "f10737a5134ae3475f80",
     "url": "/spacedRepition-client/static/css/main.26feb235.chunk.css"
   },
   {
-    "revision": "106546fd49649793afcda06d5511e239",
+    "revision": "eeea85b5f96d48321250a612953b2598",
     "url": "/spacedRepition-client/index.html"
   }
 ];
