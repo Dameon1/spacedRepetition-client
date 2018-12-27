@@ -43,9 +43,6 @@ export class App extends React.Component {
     return (
       <main className="app">
         <HeaderBar />
-        {console.log('REDeploy',BASENAME, API_BASE_URL,splitURLs)}
-        {console.log(['/spacedRepetition-client/', BASENAME])}
-        {console.log(['/spacedRepetition-client/' === `${BASENAME}/`])}
         <Route exact path={`${BASENAME}/`}component={LandingPage} />
         <Route exact path={`${BASENAME}/dashboard`} component={Dashboard}/>
         <Route
@@ -63,5 +60,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 })
 
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
 export default withRouter(connect(mapStateToProps)(App))
