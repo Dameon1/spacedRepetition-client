@@ -1,4 +1,5 @@
 # Spanish Flash (spacedRepetition-client)
+[![CircleCI](https://circleci.com/gh/Dameon1/spacedRepetition-client/tree/master.svg?style=svg)](https://circleci.com/gh/Dameon1/spacedRepetition-client/tree/master)
 
 [Live Version](https://www.dameonmendoza.com/spacedRepetition-client/)
 
