@@ -1,20 +1,21 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
 import { Card }from '../components/card';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { store, props, state } from './testUtils';
+import { store, state } from './testUtils';
 import { mapStateToProps } from '../components/card';
 import {Question} from '../components/question';
-describe('<Card />', () =>{
+
+describe('<Card />', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<Card Child={Question}/>);
-  })
-})
-describe('<Card />', () =>{
+  });
+});
+
+describe('<Card />', () => {
   it('renders without crashing', () => {
     const wrapper = mount(
       <Provider store={store}>
@@ -22,9 +23,10 @@ describe('<Card />', () =>{
         <Card Child={Question}/>
         </Router>                
       </Provider>
-      );;
-  })
-})
+      );
+  });
+});
+
 describe('Map state to props for Card', () => {
   it('maps state to props', () => {
       expect(mapStateToProps(state).loggedIn).to.equal(true);

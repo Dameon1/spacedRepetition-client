@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
-import {App} from '../components/app';
+import { App } from '../components/app';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { store, props, state } from './testUtils';
@@ -22,6 +21,8 @@ describe('<App />', () => {
               </Router>                
             </Provider>
             );
+    const item = wrapper.find('[className="header-bar"]');
+    expect(item.text()).to.contain('SPANISH FLASH')
   });   
 });
 

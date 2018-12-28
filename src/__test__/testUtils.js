@@ -18,11 +18,10 @@ import { initialState as authState } from '../reducers/auth';
     auth: {
       ...authState
    }, 
-   authToken: true, // authToken !== null does not mean it has been validated
+  authToken: true, // authToken !== null does not mean it has been validated
   currentUser: null,
   loading: false,
-  error: null},
-    
+  error: null},    
   getState: jest.fn(),
   subscribe: jest.fn(),
   dispatch: jest.fn(),
@@ -30,7 +29,7 @@ import { initialState as authState } from '../reducers/auth';
 export const state = {
   auth: {
     authToken: '1234asdf', // authToken !== null does not mean it has been validated
-    currentUser: 'ExampleUser',
+    currentUser: 'ExampleUser',  //returns true for LOGGED IN
     loading: false,
     error: null
   },
@@ -52,6 +51,6 @@ export const configs = {
 export const dispatch = jest.fn();
 
 export const props = {
-    apiRecipes:configs,
+    loggedIn: false,
     dispatch,
   }
