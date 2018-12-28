@@ -1,22 +1,21 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-const chai = require('chai');
-const expect = chai.expect;
-import { Card }from '../components/card';
+import { Card, mapStateToProps }from '../components/card';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { store, state } from './testUtils';
-import { mapStateToProps } from '../components/card';
 import {Question} from '../components/question';
+const chai = require('chai');
+const expect = chai.expect;
 
 describe('<Card />', () => {
-  it('renders without crashing', () => {
+  it('renders <Card /> without crashing', () => {
     const wrapper = shallow(<Card Child={Question}/>);
   });
 });
 
 describe('<Card />', () => {
-  it('renders without crashing', () => {
+  it('Deep Renders the <Card /> component without crashing', () => {
     const wrapper = mount(
       <Provider store={store}>
         <Router>                
@@ -27,7 +26,7 @@ describe('<Card />', () => {
   });
 });
 
-describe('Map state to props for Card', () => {
+describe('Map state to props for <Card />', () => {
   it('maps state to props', () => {
       expect(mapStateToProps(state).loggedIn).to.equal(true);
       expect(mapStateToProps(state).user).to.equal('ExampleUser');

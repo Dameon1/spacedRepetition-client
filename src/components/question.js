@@ -64,7 +64,7 @@ export class Question extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   question: state.question.question,
   error: state.question.error
 })
