@@ -3,11 +3,12 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const expect = chai.expect;
+chai.use(chaiHttp);
 import React from 'react';
 import { shallow } from 'enzyme';
 import HeaderBar from '../components/header-bar';
 
-chai.use(chaiHttp);
+
 
 describe('<HeaderBar />', () => {       
     it('Renders without crashing', () => {

@@ -43,7 +43,7 @@ export class App extends React.Component {
     return (
       <main className="app">
         <HeaderBar />
-        <Route exact path={`${BASENAME}/`}component={LandingPage} />
+        <Route exact path={`${BASENAME}/`} component={LandingPage} />
         <Route exact path={`${BASENAME}/dashboard`} component={Dashboard}/>
         <Route
           exact
@@ -55,7 +55,7 @@ export class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
   loggedIn: state.auth.currentUser !== null
 })

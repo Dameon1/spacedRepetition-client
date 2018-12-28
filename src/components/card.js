@@ -30,13 +30,13 @@ export const Card = props => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
   user: state.auth.currentUser,
   accuracy: state.question.accuracy
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   logOut: () => {
     dispatch(clearAuth())
     dispatch(clearQuestion())
