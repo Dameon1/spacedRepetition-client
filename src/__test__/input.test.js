@@ -7,7 +7,7 @@ import {Input} from '../components/input';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { store, props, state } from './testUtils';
-import { mapStateToProps } from '../components/Input';
+import { mapStateToProps } from '../components/input';
 
 
 describe('<Input />', () => {    
