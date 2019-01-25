@@ -1,23 +1,23 @@
-import React from 'react'
-import Input from './input'
-import { login } from '../actions/auth'
-import { required, nonEmpty } from '../validators'
-import { Field, reduxForm, focus } from 'redux-form'
-import './styles/login-form.css'
+import React from "react";
+import Input from "./input";
+import { login } from "../actions/auth";
+import { required, nonEmpty } from "../validators";
+import { Field, reduxForm, focus } from "redux-form";
+import "./styles/login-form.css";
 
 export class LoginForm extends React.Component {
   onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password))
+    return this.props.dispatch(login(values.username, values.password));
   }
 
   render() {
-    let error
+    let error;
     if (this.props.error) {
       error = (
         <div className="form-error" aria-live="polite">
           {this.props.error}
         </div>
-      )
+      );
     }
     return (
       <form
@@ -47,11 +47,11 @@ export class LoginForm extends React.Component {
           LOGIN
         </button>
       </form>
-    )
+    );
   }
 }
 
 export default reduxForm({
-  form: 'login',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(LoginForm)
+  form: "login",
+  onSubmitFail: (errors, dispatch) => dispatch(focus("login", "username"))
+})(LoginForm);

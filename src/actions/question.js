@@ -1,26 +1,26 @@
-import { API_BASE_URL } from '../config'
-import { normalizeResponseErrors } from './utils'
+import { API_BASE_URL } from "../config";
+import { normalizeResponseErrors } from "./utils";
 
-export const GET_QUESTION_SUCCESS = 'GET_QUESTION_SUCCESS'
+export const GET_QUESTION_SUCCESS = "GET_QUESTION_SUCCESS";
 export const getQuestionSuccess = (question, accuracy) => ({
   type: GET_QUESTION_SUCCESS,
   question,
   accuracy
-})
+});
 
-export const GET_QUESTION_ERROR = 'GET_QUESTION_ERROR'
+export const GET_QUESTION_ERROR = "GET_QUESTION_ERROR";
 export const getQuestionError = error => ({
   type: GET_QUESTION_ERROR,
   error
-})
+});
 
-export const GET_QUESTION_REQUEST = 'GET_QUESTION_REQUEST'
+export const GET_QUESTION_REQUEST = "GET_QUESTION_REQUEST";
 export const getQuestionRequest = () => ({
   type: GET_QUESTION_REQUEST
-})
+});
 
 export const getQuestion = () => (dispatch, getState) => {
-  dispatch(getQuestionRequest())
+  dispatch(getQuestionRequest());
   return fetch(`${API_BASE_URL}/question`, {
     headers: {
       authorization: `Bearer ${getState().auth.authToken}`
@@ -28,37 +28,37 @@ export const getQuestion = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({question, right, wrong}) => {
-      const accuracy = Math.floor((right / (right + wrong)) * 100)
-      dispatch(getQuestionSuccess(question, accuracy))
+    .then(({ question, right, wrong }) => {
+      const accuracy = Math.floor((right / (right + wrong)) * 100);
+      dispatch(getQuestionSuccess(question, accuracy));
     })
     .catch(err => {
-      dispatch(getQuestionError(err))
-    })
-}
+      dispatch(getQuestionError(err));
+    });
+};
 
-export const SEND_USER_RESPONSE_REQUEST = 'SEND_USER_RESPONSE_REQUEST'
+export const SEND_USER_RESPONSE_REQUEST = "SEND_USER_RESPONSE_REQUEST";
 export const sendUserResponseRequest = () => ({
   type: SEND_USER_RESPONSE_REQUEST
-})
+});
 
-export const SEND_USER_RESPONSE_SUCCESS = 'SEND_USER_RESPONSE_SUCCESS'
+export const SEND_USER_RESPONSE_SUCCESS = "SEND_USER_RESPONSE_SUCCESS";
 export const sendUserResponseSuccess = () => ({
   type: SEND_USER_RESPONSE_SUCCESS
-})
+});
 
-export const SEND_USER_RESPONSE_ERROR = 'SEND_USER_RESPONSE_ERROR'
+export const SEND_USER_RESPONSE_ERROR = "SEND_USER_RESPONSE_ERROR";
 export const sendUserResponseError = error => ({
   type: SEND_USER_RESPONSE_ERROR,
   error
-})
+});
 
 export const sendUserResponse = grade => (dispatch, getState) => {
-  dispatch(sendUserResponseRequest())
+  dispatch(sendUserResponseRequest());
   return fetch(`${API_BASE_URL}/question`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${getState().auth.authToken}`
     },
     body: JSON.stringify({
@@ -67,17 +67,17 @@ export const sendUserResponse = grade => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => {
-      dispatch(sendUserResponseSuccess())
+      dispatch(sendUserResponseSuccess());
       if (res.status === 204) {
-        return Promise.resolve('Correct')
+        return Promise.resolve("Correct");
       } else {
-        return res.json()
+        return res.json();
       }
     })
-    .catch(err => dispatch(sendUserResponseError(err)))
-}
+    .catch(err => dispatch(sendUserResponseError(err)));
+};
 
-export const CLEAR_QUESTION = 'CLEAR_QUESTION'
+export const CLEAR_QUESTION = "CLEAR_QUESTION";
 export const clearQuestion = () => ({
   type: CLEAR_QUESTION
-})
+});
